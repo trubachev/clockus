@@ -1,0 +1,84 @@
+.clock {
+  width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+.digit {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+}
+
+
+.segment {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(41, 41, 41);
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 1px 1px black;
+  transform: rotate(0deg);
+  transform-origin: 15px 15px;
+  transition-duration: 0.3s;
+  stroke: black;
+}
+
+
+.cover {
+  z-index: 1;
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  opacity: 0.96;
+}
+
+.cover.bottom {
+  position: absolute;
+  display: inline-block;
+  top: 245px;
+  height: 70px;
+  width: 100%;
+}
+
+.cover.top {
+  top: -15px;
+  height: 30px;
+}
+
+.cover.left {
+  top: 0;
+  left: -55px;
+  width: 70px;
+  height: 300px;
+}
+
+.cover.right {
+  top: 0;
+  left: 745px;
+  width: 70;
+  height: 300px;
+}
+
+.cover.middle1 {
+  top: 0;
+  left: 145px;
+  width: 70px;
+  height: 300px;
+}
+
+
+.cover.middle2 {
+  top: 0;
+  left: 345px;
+  width: 70px;
+  height: 300px;
+}
+
+.cover.middle3 {
+  top: 0;
+  left: 545px;
+  width: 70px;
+  height: 300px;
+}
