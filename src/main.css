@@ -55,7 +55,6 @@ body {
   transform: rotate(0deg);
   transform-origin: 15px 15px;
   transition-duration: 0.3s;
-  stroke: black;
 }
 
 .cover {
@@ -110,7 +109,6 @@ body.black {
 
 .black .segment {
   background-color: white;
-  stroke: white;
   box-shadow: inset 0px 0px 1px 1px lightgray;
 }
 
@@ -120,7 +118,6 @@ body.black {
 
 .black .dot {
   background-color: white;
-  stroke: white;
   box-shadow: inset 0px 0px 1px 1px lightgray;
 }
 
@@ -134,7 +131,6 @@ body.orange {
 
 .orange .segment {
   background-color: blue;
-  stroke: blue;
   box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
 }
 
@@ -144,7 +140,6 @@ body.orange {
 
 .orange .dot {
   background-color: blue;
-  stroke: blue;
   box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
 }
 
@@ -155,7 +150,6 @@ body.mindal {
 
 .mindal .segment {
   background-color: #6e82b7;
-  stroke: #6e82b7;
   box-shadow: inset 0px 0px 1px 1px #586692;
 }
 
@@ -165,7 +159,6 @@ body.mindal {
 
 .mindal .dot {
   background-color: #6e82b7;
-  stroke: #6e82b7;
   box-shadow: inset 0px 0px 1px 1px #586692;
 }
 
@@ -176,7 +169,6 @@ body.izettle {
 
 .izettle .segment {
   background-color: #2A4B89;
-  stroke: #2A4B89;
   box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
 }
 
@@ -186,7 +178,6 @@ body.izettle {
 
 .izettle .dot {
   background-color: #2A4B89;
-  stroke: #2A4B89;
   box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
 }
 
@@ -201,73 +192,61 @@ body.pride {
 
 .pride .digit:nth-child(1) .segment {
   background-color: red;
-  stroke: red;
   box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
 }
 
 .pride .digit:nth-child(1) .dot {
   background-color: red;
-  stroke: red;
   box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
 }
 
 .pride .digit:nth-child(2) .segment {
   background-color: orange;
-  stroke: orange;
   box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
 }
 
 .pride .digit:nth-child(2) .dot {
   background-color: orange;
-  stroke: orange;
   box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
 }
 
 .pride .digit:nth-child(3) .segment {
   background-color: yellow;
-  stroke: yellow;
-  box-shadow: inset 0px 0px 1px 1px rgb(233, 233, 1);
+  box-shadow: inset 0px 0px 1px 1px rgb(238, 238, 0);
 }
 
 .pride .digit:nth-child(3) .dot {
   background-color: yellow;
-  stroke: yellow;
-  box-shadow: inset 0px 0px 1px 1px rgb(233, 233, 1);
+  box-shadow: inset 0px 0px 1px 1px rgb(238, 238, 0);
 }
 
 .pride .digit:nth-child(4) .segment {
   background-color: green;
-  stroke: green;
   box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
 }
 
 .pride .digit:nth-child(4) .dot {
   background-color: green;
-  stroke: green;
   box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
 }
 
 .pride .digit:nth-child(5) .segment {
   background-color: blue;
-  stroke: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(2, 2, 233);
+  box-shadow: inset 0px 0px 1px 1px rgb(1, 1, 214);
 }
 
 .pride .digit:nth-child(5) .dot {
   background-color: blue;
-  stroke: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(2, 2, 233);
+  box-shadow: inset 0px 0px 1px 1px rgb(1, 1, 214);
 }
 
 .pride .digit:nth-child(6) .segment {
   background-color: #8e008e;
-  stroke: #8e008e;
   box-shadow: inset 0px 0px 1px 1px #750175;
 }
 
 .pride .digit:nth-child(6) .dot {
   background-color: #8e008e;
-  stroke: #8e008e;
   box-shadow: inset 0px 0px 1px 1px #750175;
 }
 
