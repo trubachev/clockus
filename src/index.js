@@ -6,11 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
 function startApp() {
   const clockDiv = document.getElementById("clock")
 
-  const minutes0 = createDigit(0)
-  const minutes1 = createDigit(0)
-  const seconds0 = createDigit(0)
-  const seconds1 = createDigit(0)
+  const now = new Date()
+  const hours = now.getHours()
+  const minutes = now.getMinutes()
+  const seconds = now.getSeconds()
 
+  const hours0 = createDigit(Math.floor(hours / 10))
+  const hours1 = createDigit(hours % 10)
+  const minutes0 = createDigit(Math.floor(minutes / 10))
+  const minutes1 = createDigit(minutes % 10)
+  const seconds0 = createDigit(Math.floor(seconds / 10))
+  const seconds1 = createDigit(seconds % 10)
+
+  clockDiv.appendChild(hours0)
+  clockDiv.appendChild(hours1)
   clockDiv.appendChild(minutes0)
   clockDiv.appendChild(minutes1)
   clockDiv.appendChild(seconds0)
@@ -18,9 +27,12 @@ function startApp() {
 
   setInterval(() => {
       const now = new Date()
+      const hours = now.getHours()
       const minutes = now.getMinutes()
       const seconds = now.getSeconds()
 
+      setDigit(hours0, Math.floor(hours / 10))
+      setDigit(hours1, hours % 10)
       setDigit(minutes0, Math.floor(minutes / 10))
       setDigit(minutes1, minutes % 10)
       setDigit(seconds0, Math.floor(seconds / 10))
@@ -85,7 +97,6 @@ function createDigit(number) {
 
 
 function setDigit(el, digit) {
-
   Array.from(el.getElementsByClassName("segment")).forEach((segment, i) => {
     segment.style.transform = `rotate(${segmentAngles[digit][i]}deg)`
   })

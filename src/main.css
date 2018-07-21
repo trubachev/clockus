@@ -1,5 +1,5 @@
 .clock {
-  width: 800px;
+  width: 1200px;
   position: relative;
   margin: auto;
 }
@@ -7,7 +7,8 @@
 .digit {
   display: inline-block;
   position: relative;
-  width: 200px;
+  width: 130px;
+  margin-right: 70px;
 }
 
 
@@ -56,29 +57,34 @@
 
 .cover.right {
   top: 0;
-  left: 745px;
+  left: 1145px;
   width: 70;
   height: 300px;
 }
 
-.cover.middle1 {
+.cover.middle {
   top: 0;
+  width: 70px;
+  height: 300px;
+}
+
+.cover.middle.m1 {
   left: 145px;
-  width: 70px;
-  height: 300px;
 }
 
 
-.cover.middle2 {
-  top: 0;
+.cover.middle.m2 {
   left: 345px;
-  width: 70px;
-  height: 300px;
 }
 
-.cover.middle3 {
-  top: 0;
+.cover.middle.m3 {
   left: 545px;
-  width: 70px;
-  height: 300px;
+}
+
+.cover.middle.m4 {
+  left: 745px
+}
+
+.cover.middle.m5 {
+  left: 945px;
 }
