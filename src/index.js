@@ -4,6 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function startApp() {
+  const selectedTheme = findGetParameter("theme") || "white"
+  const themes = ["white", "black", "orange", "mindal", "izettle", "pride"]
+  const themesEl = document.getElementById("themes")
+
+  themes.forEach((theme) => {
+    const themeEl = document.createElement("a")
+    themeEl.href = `/?theme=${theme}`
+    themeEl.innerHTML = theme
+    if (theme === selectedTheme) themeEl.classList.add("active")
+    themesEl.appendChild(themeEl)
+  })
+
+
+  document.body.classList.add(selectedTheme)
   const clockDiv = document.getElementById("clock")
 
   const now = new Date()
@@ -127,4 +141,17 @@ function setDigit(el, digit) {
   Array.from(el.getElementsByClassName("segment")).forEach((segment, i) => {
     segment.style.transform = `rotate(${segmentAngles[digit][i]}deg)`
   })
+}
+
+function findGetParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  location.search
+      .substr(1)
+      .split("&")
+      .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      });
+  return result;
 }

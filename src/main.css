@@ -7,8 +7,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.themes {
+  text-align: center;
+  position: absolute;
+  bottom: 20;
+  width: 100%;
+}
+
+.themes a {
+  color: #e4e4e4;
+  margin-right: 10px;
+}
+
+.themes:hover a {
+  color: black;
+  margin-right: 10px;
+}
+
+.themes a.active {
+  font-weight: bolder;
+}
+
 .clock {
   position: relative;
   display: flex;
@@ -80,3 +102,173 @@ body {
   top: 0;
   left: 0;
 }
+
+
+body.black {
+  background-color: black;
+}
+
+.black .segment {
+  background-color: white;
+  stroke: white;
+  box-shadow: inset 0px 0px 1px 1px lightgray;
+}
+
+.black .cover {
+  background-color: black;
+}
+
+.black .dot {
+  background-color: white;
+  stroke: white;
+  box-shadow: inset 0px 0px 1px 1px lightgray;
+}
+
+.black .themes:hover a {
+  color: white;
+}
+
+body.orange {
+  background-color: orange;
+}
+
+.orange .segment {
+  background-color: blue;
+  stroke: blue;
+  box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
+}
+
+.orange .cover {
+  background-color: orange;
+}
+
+.orange .dot {
+  background-color: blue;
+  stroke: blue;
+  box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
+}
+
+
+body.mindal {
+  background-color: #f7e8d8;
+}
+
+.mindal .segment {
+  background-color: #6e82b7;
+  stroke: #6e82b7;
+  box-shadow: inset 0px 0px 1px 1px #586692;
+}
+
+.mindal .cover {
+  background-color: #f7e8d8;
+}
+
+.mindal .dot {
+  background-color: #6e82b7;
+  stroke: #6e82b7;
+  box-shadow: inset 0px 0px 1px 1px #586692;
+}
+
+
+body.izettle {
+  background-color: white;
+}
+
+.izettle .segment {
+  background-color: #2A4B89;
+  stroke: #2A4B89;
+  box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
+}
+
+.izettle .cover {
+  background-color: white;
+}
+
+.izettle .dot {
+  background-color: #2A4B89;
+  stroke: #2A4B89;
+  box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
+}
+
+
+body.pride {
+  background-color: white
+}
+
+.pride .cover {
+  background-color: white;
+}
+
+.pride .digit:nth-child(1) .segment {
+  background-color: red;
+  stroke: red;
+  box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
+}
+
+.pride .digit:nth-child(1) .dot {
+  background-color: red;
+  stroke: red;
+  box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
+}
+
+.pride .digit:nth-child(2) .segment {
+  background-color: orange;
+  stroke: orange;
+  box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
+}
+
+.pride .digit:nth-child(2) .dot {
+  background-color: orange;
+  stroke: orange;
+  box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
+}
+
+.pride .digit:nth-child(3) .segment {
+  background-color: yellow;
+  stroke: yellow;
+  box-shadow: inset 0px 0px 1px 1px rgb(233, 233, 1);
+}
+
+.pride .digit:nth-child(3) .dot {
+  background-color: yellow;
+  stroke: yellow;
+  box-shadow: inset 0px 0px 1px 1px rgb(233, 233, 1);
+}
+
+.pride .digit:nth-child(4) .segment {
+  background-color: green;
+  stroke: green;
+  box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
+}
+
+.pride .digit:nth-child(4) .dot {
+  background-color: green;
+  stroke: green;
+  box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
+}
+
+.pride .digit:nth-child(5) .segment {
+  background-color: blue;
+  stroke: blue;
+  box-shadow: inset 0px 0px 1px 1px rgb(2, 2, 233);
+}
+
+.pride .digit:nth-child(5) .dot {
+  background-color: blue;
+  stroke: blue;
+  box-shadow: inset 0px 0px 1px 1px rgb(2, 2, 233);
+}
+
+.pride .digit:nth-child(6) .segment {
+  background-color: #8e008e;
+  stroke: #8e008e;
+  box-shadow: inset 0px 0px 1px 1px #750175;
+}
+
+.pride .digit:nth-child(6) .dot {
+  background-color: #8e008e;
+  stroke: #8e008e;
+  box-shadow: inset 0px 0px 1px 1px #750175;
+}
+
+
