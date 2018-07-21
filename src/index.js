@@ -7,14 +7,16 @@ function startApp() {
   const clockDiv = document.getElementById("clock")
 
   const now = new Date()
-  const hours = now.getHours()
+  const hours = now.getHours() % 12 || 12
   const minutes = now.getMinutes()
   const seconds = now.getSeconds()
 
   const hours0 = createDigit(Math.floor(hours / 10))
   const hours1 = createDigit(hours % 10)
+  hours1.style.marginRight = "110px"
   const minutes0 = createDigit(Math.floor(minutes / 10))
   const minutes1 = createDigit(minutes % 10)
+  minutes1.style.marginRight = "110px"
   const seconds0 = createDigit(Math.floor(seconds / 10))
   const seconds1 = createDigit(seconds % 10)
 
@@ -27,7 +29,7 @@ function startApp() {
 
   setInterval(() => {
       const now = new Date()
-      const hours = now.getHours()
+      const hours = now.getHours() % 12 || 12
       const minutes = now.getMinutes()
       const seconds = now.getSeconds()
 
@@ -90,11 +92,36 @@ function createDigit(number) {
     segment.style.left = segmentsPositions[i].x
     segment.style.top = segmentsPositions[i].y
     segment.style.transform = `rotate(${segmentAngles[number][i]}deg)`
+
+    const dot = document.createElement("div")
+    dot.classList.add("dot")
+    segment.appendChild(dot)
+
     digit.appendChild(segment)
   }
+  addCoversToDigit(digit)
+
   return digit
 }
 
+
+function addCoversToDigit(digit) {
+  const coverTop = document.createElement("div")
+  coverTop.classList.add("cover", "top")
+  digit.appendChild(coverTop)
+
+  const coverBottom = document.createElement("div")
+  coverBottom.classList.add("cover", "bottom")
+  digit.appendChild(coverBottom)
+
+  const coverLeft = document.createElement("div")
+  coverLeft.classList.add("cover", "left")
+  digit.appendChild(coverLeft)
+
+  const coverRight = document.createElement("div")
+  coverRight.classList.add("cover", "right")
+  digit.appendChild(coverRight)
+}
 
 function setDigit(el, digit) {
   Array.from(el.getElementsByClassName("segment")).forEach((segment, i) => {

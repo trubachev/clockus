@@ -1,16 +1,27 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
 .clock {
-  width: 1200px;
   position: relative;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .digit {
   display: inline-block;
   position: relative;
   width: 130px;
+  height: 245px;
   margin-right: 70px;
 }
-
 
 .segment {
   position: absolute;
@@ -25,66 +36,47 @@
   stroke: black;
 }
 
-
 .cover {
   z-index: 1;
   background-color: white;
   position: absolute;
-  display: inline-block;
-  width: 100%;
-  opacity: 0.96;
 }
 
 .cover.bottom {
-  position: absolute;
-  display: inline-block;
   top: 245px;
-  height: 70px;
-  width: 100%;
+  left: -55px;
+  height: 115px;
+  width: 270px;
 }
 
 .cover.top {
-  top: -15px;
-  height: 30px;
+  top: -100px;
+  left: -55px;
+  height: 115px;
+  width: 270px;
 }
 
 .cover.left {
-  top: 0;
+  top: 15px;
   left: -55px;
   width: 70px;
-  height: 300px;
+  height: 230px;
 }
 
 .cover.right {
-  top: 0;
-  left: 1145px;
-  width: 70;
-  height: 300px;
-}
-
-.cover.middle {
-  top: 0;
-  width: 70px;
-  height: 300px;
-}
-
-.cover.middle.m1 {
+  top: 15px;
   left: 145px;
+  width: 70;
+  height: 230px;
 }
 
-
-.cover.middle.m2 {
-  left: 345px;
-}
-
-.cover.middle.m3 {
-  left: 545px;
-}
-
-.cover.middle.m4 {
-  left: 745px
-}
-
-.cover.middle.m5 {
-  left: 945px;
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(41, 41, 41);
+  box-shadow: inset 0px 0px 1px 1px black;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
