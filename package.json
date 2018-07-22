@@ -12,6 +12,9 @@
     "copy:html": "cp src/index.html dist",
     "copy:css": "cp src/main.css dist"
   },
+  "engines": {
+    "node": "8.11.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
