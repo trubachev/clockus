@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server dist -p3005",
+    "start": "node src/server.js",
     "start:dev": "webpack-dev-server",
     "build": "yarn minify:js && yarn copy:html && yarn copy:css",
     "minify:js": "babel src -d dist",
@@ -23,6 +23,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.4.3",
-    "http-server": "^0.11.1"
+    "node-static": "^0.7.10"
   }
 }
