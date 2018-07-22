@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "start:dev": "webpack-dev-server",
+    "heroku-postbuild": "yarn build",
     "build": "yarn minify:js && yarn copy:html && yarn copy:css",
     "minify:js": "babel src -d dist",
     "copy:html": "cp src/index.html dist",
