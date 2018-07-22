@@ -1,0 +1,28 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server dist -p3005",
+    "start:dev": "webpack-dev-server",
+    "build": "yarn minify:js && yarn copy:html && yarn copy:css",
+    "minify:js": "babel src -d dist",
+    "copy:html": "cp src/index.html dist",
+    "copy:css": "cp src/main.css dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "http-server": "^0.11.1"
+  }
+}
