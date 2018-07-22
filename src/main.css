@@ -42,18 +42,17 @@ body {
   position: relative;
   width: 130px;
   height: 245px;
-  margin-right: 70px;
 }
 
 .segment {
   position: absolute;
-  width: 100px;
-  height: 30px;
+  /* width: 100px; */
+  /* height: 30px; */
   background-color: rgb(41, 41, 41);
   border-radius: 15px;
   box-shadow: inset 0px 0px 1px 1px black;
   transform: rotate(0deg);
-  transform-origin: 15px 15px;
+
   transition-duration: 0.3s;
 }
 
@@ -63,37 +62,7 @@ body {
   position: absolute;
 }
 
-.cover.bottom {
-  top: 245px;
-  left: -55px;
-  height: 115px;
-  width: 270px;
-}
-
-.cover.top {
-  top: -100px;
-  left: -55px;
-  height: 115px;
-  width: 270px;
-}
-
-.cover.left {
-  top: 15px;
-  left: -55px;
-  width: 70px;
-  height: 230px;
-}
-
-.cover.right {
-  top: 15px;
-  left: 145px;
-  width: 70px;
-  height: 230px;
-}
-
 .dot {
-  width: 30px;
-  height: 30px;
   border-radius: 15px;
   background-color: rgb(41, 41, 41);
   box-shadow: inset 0px 0px 1px 1px black;

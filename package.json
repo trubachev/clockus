@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "start:dev": "webpack-dev-server",
+    "start:dev": "webpack-dev-server --port 3005",
     "heroku-postbuild": "yarn build",
     "build": "yarn minify:js && yarn copy:html && yarn copy:css",
     "minify:js": "babel src -d dist",
