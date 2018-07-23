@@ -46,10 +46,7 @@ body {
 
 .segment {
   position: absolute;
-  /* width: 100px; */
-  /* height: 30px; */
   background-color: rgb(41, 41, 41);
-  border-radius: 15px;
   box-shadow: inset 0px 0px 1px 1px black;
   transform: rotate(0deg);
 
@@ -63,7 +60,6 @@ body {
 }
 
 .dot {
-  border-radius: 15px;
   background-color: rgb(41, 41, 41);
   box-shadow: inset 0px 0px 1px 1px black;
   position: absolute;
