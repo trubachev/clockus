@@ -138,25 +138,25 @@ const segmentAngles = [
 function addCoversToDigit(digit, segmentWidth) {
   const coverTop = document.createElement("div")
   coverTop.classList.add("cover")
-  coverTop.style.top = `-${segmentWidth * 0.7}px`
+  coverTop.style.top = `-${segmentWidth * 0.7 + 1}px`
   coverTop.style.left = `-${segmentWidth * 0.7}px`
   coverTop.style.width = `${segmentWidth * 2.7}px`
-  coverTop.style.height = `${segmentWidth * 0.7}px`
+  coverTop.style.height = `${segmentWidth * 0.7 + 1}px`
   digit.appendChild(coverTop)
 
   const coverBottom = document.createElement("div")
   coverBottom.classList.add("cover")
   coverBottom.style.top = `${segmentWidth * 2.3}px`
-  coverBottom.style.left = `-${segmentWidth * 0.7}px`
+  coverBottom.style.left = `-${segmentWidth * 0.7 }px`
   coverBottom.style.width = `${segmentWidth * 2.7}px`
-  coverBottom.style.height = `${segmentWidth * 0.7}px`
+  coverBottom.style.height = `${segmentWidth * 0.7 + 1}px`
   digit.appendChild(coverBottom)
 
   const coverLeft = document.createElement("div")
   coverLeft.classList.add("cover")
   coverLeft.style.top = `-${segmentWidth * 0.7}px`
-  coverLeft.style.left = `-${segmentWidth * 0.7}px`
-  coverLeft.style.width = `${segmentWidth * 0.7}px`
+  coverLeft.style.left = `-${segmentWidth * 0.7 + 1}px`
+  coverLeft.style.width = `${segmentWidth * 0.7 + 1}px`
   coverLeft.style.height = `${segmentWidth * 3.7}px`
   digit.appendChild(coverLeft)
 
@@ -164,7 +164,7 @@ function addCoversToDigit(digit, segmentWidth) {
   coverRight.classList.add("cover")
   coverRight.style.top = `-${segmentWidth}px`
   coverRight.style.left = `${segmentWidth * 1.3}px`
-  coverRight.style.width = `${segmentWidth * 0.7}px`
+  coverRight.style.width = `${segmentWidth * 0.7 + 1}px`
   coverRight.style.height = `${segmentWidth * 3.7}px`
   digit.appendChild(coverRight)
 }
