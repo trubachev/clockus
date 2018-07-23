@@ -42,13 +42,15 @@ function startApp() {
       segment.style.transformOrigin = `${segmentWidth * 0.15}px ${segmentWidth *
         0.15}px`
       segment.style.borderRadius = `${segmentWidth * 0.15}px`
-      const dot = document.createElement("div")
-      dot.classList.add("dot")
-      dot.style.width = `${segmentWidth * 0.3}px`
-      dot.style.height = `${segmentWidth * 0.3}px`
-      dot.style.borderRadius = `${segmentWidth * 0.15}px`
+      if (i % 2 === 1) {
+        const dot = document.createElement("div")
+        dot.classList.add("dot")
+        dot.style.width = `${segmentWidth * 0.3}px`
+        dot.style.height = `${segmentWidth * 0.3}px`
+        dot.style.borderRadius = `${segmentWidth * 0.15}px`
 
-      segment.appendChild(dot)
+        segment.appendChild(dot)
+      }
 
       digit.appendChild(segment)
     }
@@ -136,10 +138,10 @@ const segmentAngles = [
 function addCoversToDigit(digit, segmentWidth) {
   const coverTop = document.createElement("div")
   coverTop.classList.add("cover")
-  coverTop.style.top = `-${segmentWidth * 0.7 + 1}px`
+  coverTop.style.top = `-${segmentWidth * 0.7}px`
   coverTop.style.left = `-${segmentWidth * 0.7}px`
   coverTop.style.width = `${segmentWidth * 2.7}px`
-  coverTop.style.height = `${segmentWidth * 0.7 + 1}px`
+  coverTop.style.height = `${segmentWidth * 0.7}px`
   digit.appendChild(coverTop)
 
   const coverBottom = document.createElement("div")
@@ -147,14 +149,14 @@ function addCoversToDigit(digit, segmentWidth) {
   coverBottom.style.top = `${segmentWidth * 2.3}px`
   coverBottom.style.left = `-${segmentWidth * 0.7}px`
   coverBottom.style.width = `${segmentWidth * 2.7}px`
-  coverBottom.style.height = `${segmentWidth * 0.7 + 1}px`
+  coverBottom.style.height = `${segmentWidth * 0.7}px`
   digit.appendChild(coverBottom)
 
   const coverLeft = document.createElement("div")
   coverLeft.classList.add("cover")
   coverLeft.style.top = `-${segmentWidth * 0.7}px`
-  coverLeft.style.left = `-${segmentWidth * 0.7 + 1}px`
-  coverLeft.style.width = `${segmentWidth * 0.7 + 1}px`
+  coverLeft.style.left = `-${segmentWidth * 0.7}px`
+  coverLeft.style.width = `${segmentWidth * 0.7}px`
   coverLeft.style.height = `${segmentWidth * 3.7}px`
   digit.appendChild(coverLeft)
 

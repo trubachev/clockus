@@ -48,9 +48,9 @@ body {
 .segment {
   position: absolute;
   background-color: rgb(41, 41, 41);
-  box-shadow: inset 0px 0px 1px 1px black;
+  border: 1px solid black;
+  box-sizing: border-box;
   transform: rotate(0deg);
-
   transition-duration: 0.3s;
 }
 
@@ -62,10 +62,11 @@ body {
 
 .dot {
   background-color: rgb(41, 41, 41);
-  box-shadow: inset 0px 0px 1px 1px black;
+  border: 1px solid black;
+  box-sizing: border-box;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
 }
 
 body.black {
@@ -74,7 +75,7 @@ body.black {
 
 .black .segment {
   background-color: white;
-  box-shadow: inset 0px 0px 1px 1px lightgray;
+  border-color: lightgray;
 }
 
 .black .cover {
@@ -83,7 +84,7 @@ body.black {
 
 .black .dot {
   background-color: white;
-  box-shadow: inset 0px 0px 1px 1px lightgray;
+  border-color: lightgray;
 }
 
 .black .themes:hover a {
@@ -91,21 +92,21 @@ body.black {
 }
 
 body.orange {
-  background-color: orange;
+  background-color: #EA8A1C;
 }
 
 .orange .segment {
-  background-color: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
+  background-color: #3214D8;
+  border-color: #3926A2;
 }
 
 .orange .cover {
-  background-color: orange;
+  background-color: #EA8A1C;
 }
 
 .orange .dot {
-  background-color: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(0, 0, 187);
+  background-color: #3214D8;
+  border-color: #3926A2;
 }
 
 body.mindal {
@@ -114,7 +115,7 @@ body.mindal {
 
 .mindal .segment {
   background-color: #6e82b7;
-  box-shadow: inset 0px 0px 1px 1px #586692;
+  border-color: #586692;
 }
 
 .mindal .cover {
@@ -123,7 +124,7 @@ body.mindal {
 
 .mindal .dot {
   background-color: #6e82b7;
-  box-shadow: inset 0px 0px 1px 1px #586692;
+  border-color: #586692;
 }
 
 body.izettle {
@@ -132,7 +133,7 @@ body.izettle {
 
 .izettle .segment {
   background-color: #2a4b89;
-  box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
+  border-color: rgb(36, 64, 116);
 }
 
 .izettle .cover {
@@ -141,7 +142,7 @@ body.izettle {
 
 .izettle .dot {
   background-color: #2a4b89;
-  box-shadow: inset 0px 0px 1px 1px rgb(36, 64, 116);
+  border-color: rgb(36, 64, 116);
 }
 
 body.pride {
@@ -154,60 +155,60 @@ body.pride {
 
 .pride .digit:nth-child(1) .segment {
   background-color: red;
-  box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
+  border-color: rgb(224, 2, 2);
 }
 
 .pride .digit:nth-child(1) .dot {
   background-color: red;
-  box-shadow: inset 0px 0px 1px 1px rgb(224, 2, 2);
+  border-color: rgb(224, 2, 2);
 }
 
 .pride .digit:nth-child(2) .segment {
   background-color: orange;
-  box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
+  border-color: rgb(223, 145, 2);
 }
 
 .pride .digit:nth-child(2) .dot {
   background-color: orange;
-  box-shadow: inset 0px 0px 1px 1px rgb(223, 145, 2);
+  border-color: rgb(223, 145, 2);
 }
 
 .pride .digit:nth-child(3) .segment {
   background-color: yellow;
-  box-shadow: inset 0px 0px 1px 1px rgb(238, 238, 0);
+  border-color: rgb(238, 238, 0);
 }
 
 .pride .digit:nth-child(3) .dot {
   background-color: yellow;
-  box-shadow: inset 0px 0px 1px 1px rgb(238, 238, 0);
+  border-color: rgb(238, 238, 0);
 }
 
 .pride .digit:nth-child(4) .segment {
   background-color: green;
-  box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
+  border-color: rgb(0, 110, 0);
 }
 
 .pride .digit:nth-child(4) .dot {
   background-color: green;
-  box-shadow: inset 0px 0px 1px 1px rgb(0, 110, 0);
+  border-color: rgb(0, 110, 0);
 }
 
 .pride .digit:nth-child(5) .segment {
   background-color: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(1, 1, 214);
+  border-color: rgb(1, 1, 214);
 }
 
 .pride .digit:nth-child(5) .dot {
   background-color: blue;
-  box-shadow: inset 0px 0px 1px 1px rgb(1, 1, 214);
+  border-color: rgb(1, 1, 214);
 }
 
 .pride .digit:nth-child(6) .segment {
   background-color: #8e008e;
-  box-shadow: inset 0px 0px 1px 1px #750175;
+  border-color: #750175;
 }
 
 .pride .digit:nth-child(6) .dot {
   background-color: #8e008e;
-  box-shadow: inset 0px 0px 1px 1px #750175;
+  border-color: #750175;
 }
