@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-function startApp() {
+const startApp = () => {
   const clientWidth = document.documentElement.clientWidth
   const segmentWidth = clientWidth / 16
 
@@ -59,17 +59,32 @@ function startApp() {
     return digit
   }
 
-  const selectedTheme = findGetParameter("theme") || "white"
   const themes = ["white", "black", "orange", "mindal", "izettle", "pride"]
+  const timeFormats = ["12", "24"]
+
+  const selectedTimeFormat = findGetParameter("time_format") || "12"
+  const selectedTheme = findGetParameter("theme") || "white"
+
   const themesEl = document.getElementById("themes")
   themesEl.innerHTML = ""
 
   themes.forEach(theme => {
     const themeEl = document.createElement("a")
-    themeEl.href = `/?theme=${theme}`
+    themeEl.href = `/?theme=${theme}&timer_format=${selectedTimeFormat}`
     themeEl.innerHTML = theme
     if (theme === selectedTheme) themeEl.classList.add("active")
     themesEl.appendChild(themeEl)
+  })
+
+  const timeFormatsEl = document.getElementById("time-formats")
+  timeFormatsEl.innerHtml = ""
+
+  timeFormats.forEach(timeFormat => {
+    const timeFormatEl = document.createElement("a")
+    timeFormatEl.href = `/?theme=${selectedTheme}&time_format=${timeFormat}`
+    timeFormatEl.textContent = `${timeFormat}h`
+    if (timeFormat === selectedTimeFormat) timeFormatEl.classList.add("active")
+    timeFormatsEl.appendChild(timeFormatEl)
   })
 
   document.body.classList.add(selectedTheme)
@@ -77,7 +92,7 @@ function startApp() {
   clockDiv.innerHTML = ""
 
   const now = new Date()
-  const hours = now.getHours() % 12 || 12
+  const hours = selectedTimeFormat === "12" ? now.getHours() % 12 || 12 : now.getHours()
   const minutes = now.getMinutes()
   const seconds = now.getSeconds()
 
@@ -99,7 +114,7 @@ function startApp() {
 
   setInterval(() => {
     const now = new Date()
-    const hours = now.getHours() % 12 || 12
+    const hours = selectedTimeFormat === "12" ? now.getHours() % 12 || 12 : now.getHours()
     const minutes = now.getMinutes()
     const seconds = now.getSeconds()
 
@@ -135,7 +150,7 @@ const segmentAngles = [
   [0, 90, 180, 90, 180, 0, 180, 135, -45, -45, 0, 90]
 ]
 
-function addCoversToDigit(digit, segmentWidth) {
+const addCoversToDigit = (digit, segmentWidth) => {
   const coverTop = document.createElement("div")
   coverTop.classList.add("cover")
   coverTop.style.top = `-${segmentWidth * 0.7 + 1}px`
@@ -169,13 +184,13 @@ function addCoversToDigit(digit, segmentWidth) {
   digit.appendChild(coverRight)
 }
 
-function setDigit(el, digit) {
+const setDigit = (el, digit) => {
   Array.from(el.getElementsByClassName("segment")).forEach((segment, i) => {
     segment.style.transform = `rotate(${segmentAngles[digit][i]}deg)`
   })
 }
 
-function findGetParameter(parameterName) {
+const findGetParameter = (parameterName) => {
   var result = null,
     tmp = []
   location.search
