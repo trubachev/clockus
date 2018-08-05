@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const startApp = () => {
+
   const clientWidth = document.documentElement.clientWidth
   const segmentWidth = clientWidth / 16
 
@@ -77,7 +78,7 @@ const startApp = () => {
   })
 
   const timeFormatsEl = document.getElementById("time-formats")
-  timeFormatsEl.innerHtml = ""
+  timeFormatsEl.innerHTML = ""
 
   timeFormats.forEach(timeFormat => {
     const timeFormatEl = document.createElement("a")
@@ -112,6 +113,8 @@ const startApp = () => {
   clockDiv.appendChild(seconds0)
   clockDiv.appendChild(seconds1)
 
+
+  updateFavIcon(seconds.toString())
   setInterval(() => {
     const now = new Date()
     const hours = selectedTimeFormat === "12" ? now.getHours() % 12 || 12 : now.getHours()
@@ -124,6 +127,7 @@ const startApp = () => {
     setDigit(minutes1, minutes % 10)
     setDigit(seconds0, Math.floor(seconds / 10))
     setDigit(seconds1, seconds % 10)
+    updateFavIcon(seconds.toString())
   }, 1000)
 }
 
@@ -201,4 +205,128 @@ const findGetParameter = (parameterName) => {
       if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1])
     })
   return result
+}
+
+
+const digitDraw = {
+  "0": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 4, 10, 12, 80)
+    ctx.fillRect(xOffset + 36, 10, 12, 80)
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 10, 84, 34, 12)
+  },
+  "1": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 36, 10, 12, 80)
+    ctx.translate(xOffset + 4 + 6, 50)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), - 50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  },
+  "2": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 36, 10, 12, 40)
+    ctx.fillRect(xOffset + 10, 84, 34, 12)
+    ctx.translate(xOffset + 4 + 6, 90)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), -50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  },
+  "3":  (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+    ctx.translate(xOffset + 4 + 6, 90)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), -50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+    ctx.translate(xOffset + 4 + 6, 50)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), - 50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  },
+  "4": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 36, 10, 12, 80)
+    ctx.fillRect(xOffset + 4, 10, 12, 40)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+  },
+  "5": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+    ctx.fillRect(xOffset + 10, 84, 34, 12)
+    ctx.fillRect(xOffset + 4, 10, 12, 40)
+    ctx.fillRect(xOffset + 36, 50, 12, 40)
+  },
+  "6": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 36, 50, 12, 40)
+    ctx.fillRect(xOffset + 4, 50, 12, 40)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+    ctx.fillRect(xOffset + 10, 84, 34, 12)
+    ctx.translate(xOffset + 4 + 6, 50)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), - 50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  },
+  "7": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 36, 10, 12, 40)
+    ctx.translate(xOffset + 4 + 6, 90)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), -50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  },
+  "8": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 4, 10, 12, 80)
+    ctx.fillRect(xOffset + 36, 10, 12, 80)
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 10, 84, 34, 12)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+  },
+  "9": (ctx, xOffset) => {
+    ctx.fillRect(xOffset + 10, 4, 34, 12)
+    ctx.fillRect(xOffset + 36, 10, 12, 40)
+    ctx.fillRect(xOffset + 10, 44, 34, 12)
+    ctx.fillRect(xOffset + 4, 10, 12, 40)
+    ctx.translate(xOffset + 4 + 6, 90)
+    ctx.rotate(39 * Math.PI / 180)
+    ctx.fillRect(xOffset - (xOffset + 6), -50, 12, 50)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+  }
+}
+
+const favIconDotsCooridinates = [
+  [10, 10], [10, 50], [10, 90],
+  [42, 10], [42, 50], [42, 90],
+  [58, 10], [58, 50], [58, 90],
+  [90, 10], [90, 50], [90, 90],
+
+]
+
+const updateFavIcon = (number) => {
+  console.log(number)
+  const canvas = document.getElementById("favicon-canvas")
+
+  const ctx = canvas.getContext("2d")
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+
+  favIconDotsCooridinates.forEach(dotCoordinates => {
+    ctx.beginPath()
+    ctx.arc(dotCoordinates[0], dotCoordinates[1], 6, 0, 2* Math.PI, false)
+    ctx.fillStyle = 'black'
+    ctx.fill()
+  })
+
+  digitDraw[number[0]](ctx, 0)
+  digitDraw[number[1]](ctx, 48)
+
+  const favUrl = canvas.toDataURL('image/png')
+
+  const favIcons = document.querySelectorAll("link[rel=icon]")
+
+  if (favIcons.length > 0) favIcons[0].remove()
+  const favLinkEl = document.createElement("link")
+  favLinkEl.setAttribute("rel", "icon")
+  favLinkEl.setAttribute("type", "image/gif")
+  favLinkEl.setAttribute("href", favUrl)
+
+  document.head.appendChild(favLinkEl)
 }
