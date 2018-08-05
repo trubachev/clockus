@@ -301,7 +301,7 @@ const favIconDotsCooridinates = [
 ]
 
 const updateFavIcon = (number) => {
-  console.log(number)
+  if (number.length === 1) number = `0${number}`
   const canvas = document.getElementById("favicon-canvas")
 
   const ctx = canvas.getContext("2d")
