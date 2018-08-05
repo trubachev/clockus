@@ -98,10 +98,10 @@ const startApp = () => {
 
   const hours0 = createDigit(Math.floor(hours / 10))
   const hours1 = createDigit(hours % 10)
-  hours1.style.marginRight = `${segmentWidth * 1.1}px`
+  hours1.style.marginRight = `${segmentWidth * 1.5}px`
   const minutes0 = createDigit(Math.floor(minutes / 10))
   const minutes1 = createDigit(minutes % 10)
-  minutes1.style.marginRight = `${segmentWidth * 1.1}px`
+  minutes1.style.marginRight = `${segmentWidth * 1.5}px`
   const seconds0 = createDigit(Math.floor(seconds / 10))
   const seconds1 = createDigit(seconds % 10)
 
