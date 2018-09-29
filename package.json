@@ -2,15 +2,14 @@
   "name": "clock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "start:dev": "webpack-dev-server --port 3005",
+    "start": "webpack-dev-server --port 3005",
     "heroku-postbuild": "yarn build",
-    "build": "yarn minify:js && yarn copy:html && yarn copy:css",
+    "build": "yarn minify:js && yarn copy:html && yarn copy:css && yarn copy:fav",
     "minify:js": "babel src -d dist",
     "copy:html": "cp src/index.html dist",
-    "copy:css": "cp src/main.css dist"
+    "copy:css": "cp src/main.css dist",
+    "copy:fav": "cp src/favicon.png dist"
   },
   "prettier": {
     "semi": false
@@ -26,7 +25,6 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-minify": "^0.4.3",
-    "node-static": "^0.7.10"
+    "babel-preset-minify": "^0.4.3"
   }
 }
