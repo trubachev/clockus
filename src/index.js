@@ -6,6 +6,8 @@ if (!('remove' in Element.prototype)) {
   };
 }
 
+Array.from||(Array.from=function(ar){return Array.prototype.slice.call(ar)});
+
 document.addEventListener("DOMContentLoaded", () => {
   startApp()
 
@@ -203,6 +205,8 @@ const addCoversToDigit = (digit, segmentWidth) => {
   coverRight.style.height = `${segmentWidth * 3.7}px`
   digit.appendChild(coverRight)
 }
+
+
 
 const setDigit = (el, digit) => {
   Array.from(el.getElementsByClassName("segment")).forEach((segment, i) => {
