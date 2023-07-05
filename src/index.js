@@ -31,7 +31,7 @@ const startApp = () => {
     digit.style.width = `${segmentWidth * 1.3}px`
     digit.style.marginRight = `${segmentWidth * 0.7}px`
 
-    for (let i of Array(12).keys()) {
+    for (let i = 0; i < 12; i++) {
       const segment = document.createElement("div")
       segment.classList.add("segment")
       segment.style.width = `${segmentWidth}px`

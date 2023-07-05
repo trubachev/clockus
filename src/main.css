@@ -31,7 +31,6 @@ body {
 
 .time-formats a.active {
   font-weight: bolder;
-
 }
 
 .themes a {
@@ -110,21 +109,21 @@ body.black {
 }
 
 body.orange {
-  background-color: #ea8a1c;
+  background-color: #ffa41b;
 }
 
 .orange .segment {
-  background-color: #3214d8;
-  border-color: #3926a2;
+  background-color: #525fe1;
+  border-color: #3a45bc;
 }
 
 .orange .cover {
-  background-color: #ea8a1c;
+  background-color: #ffa41b;
 }
 
 .orange .dot {
-  background-color: #3214d8;
-  border-color: #3926a2;
+  background-color: #525fe1;
+  border-color: #3a45bc;
 }
 
 body.mindal {

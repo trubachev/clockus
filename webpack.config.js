@@ -5,7 +5,9 @@ module.exports = {
     app: path.join(__dirname, "src", "index.js")
   },
   devServer: {
-    contentBase: path.join(__dirname, "src"),
+    static: {
+      directory: path.join(__dirname, "src"),
+    },
     hot: true
   },
   mode: "development"
